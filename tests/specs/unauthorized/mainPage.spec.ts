@@ -1,23 +1,13 @@
-import { Page, test } from '@playwright/test';
-import { MainPage } from '../../pages/MainPage';
+import { test, expect } from '../../fixtures/fixtures';
 
-test('Проверка доступности элементов хедера', async ({ page }) => {
-  const mainPage = new MainPage(page);
-  await mainPage.open();
-  await mainPage.closePopapAndCockiesAlert();
+test('Проверка доступности элементов хедера', async ({ mainPage }) => {
   await mainPage.headerHasCorrectAriaSnapshot();
 });
 
-test('Проверка доступности элементов табов категорий', async ({ page }) => {
-  const mainPage = new MainPage(page);
-  await mainPage.open();
-  await mainPage.closePopapAndCockiesAlert();
+test('Проверка доступности элементов табов категорий', async ({ mainPage }) => {
   await mainPage.categoriesTabsHasCorrectAriaSnapshot();
 });
 
-test('Проверка доступности элементов бокового меню', async ({ page }) => {
-  const mainPage = new MainPage(page);
-  await mainPage.open();
-  await mainPage.closePopapAndCockiesAlert();
+test('Проверка доступности элементов бокового меню', async ({ mainPage }) => {
   await mainPage.menuHasCorrectAriaSnapshot();
 });
